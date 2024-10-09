@@ -11,27 +11,70 @@ class Numbers {
   }
   count() {
     //return the count of numbers in data
+    const totalItems = this.data.reduce((p) => {
+      this.data == true;
+      return p + 1;
+    }, 0);
+    return totalItems;
   }
   printNumbers() {
     //print the numbers in data
+    for (let i = 0; i < this.data.length; i++) {
+      console.log(this.data[i], i);
+    }
   }
   odds() {
     //return the odd numbers in data
+    const oddNumbers = [];
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] % 2 >= 1) {
+        oddNumbers.push(this.data[i]);
+      }
+    }
+    return oddNumbers;
   }
+
   evens() {
     //return the even numbers in data
+    const evenNumbers = [];
+
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] % 2 == 0) {
+        evenNumbers.push(this.data[i]);
+      }
+    }
+    return evenNumbers;
   }
   sum() {
     //return the sum of the numbers
+    const getSum = this.data.reduce((p, c) => {
+      return p + c;
+    }, 0);
+    return getSum;
   }
   product() {
     //return the product of the numbers
+    const getProduct = this.data.reduce((p, c) => {
+      return p * c;
+    }, 1);
+    return getProduct;
   }
   greaterThan(target) {
     //return the numbers greater than the target
+    let nums = this.data.filter((number) => number > target);
+    return nums;
   }
+
   howMany(target) {
     //return the count of a given number
+    let count = 0;
+    for (let i = 0; i < this.data.length; i++) {
+      if (this.data[i] === target) {
+        count++;
+      }
+    }
+    return count;
   }
 }
 
